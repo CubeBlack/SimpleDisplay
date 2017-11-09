@@ -2,6 +2,9 @@
   padding: 0;
   margin: 0;
 }
+body{
+	margin-top: 60px;
+}
 header {
   position: fixed;
   background-color: white;
@@ -32,6 +35,9 @@ h1{
   display: inline;
 }
 nav{
+	transition-duration: 0.1s;
+  transition-timing-function: linear;
+  
   position: fixed;
   top: 0;
   left: 0;
@@ -83,8 +89,10 @@ nav li:hover{
   */
   background: black;
 }
+svg{
+	border: 1px solid red;
+}
 article{
-  //border:1px solid red;
   margin: 10px;
   padding: 10px;
 }

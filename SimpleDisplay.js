@@ -1,26 +1,30 @@
 console.log("simpleDisplay.js loaded");
-var SimpleDisplay = {
-
-};
-
-SimpleDisplay.addDisplay = function(){}
+SimpleDisplay = {};
 SimpleDisplay.template = {};
+SimpleDisplay.displayObj = {};
+SimpleDisplay.display = [];
+
 SimpleDisplay.template.rect = "<rect id=\"{id}\" x=\"{x}\" y=\"{y}\" width=\"{width}\" height=\"{height}\" style=\"fill:{fill};stroke:{stroke};\" />";
 SimpleDisplay.template.svg = "<svg id=\"{id}\" height=\"300\" width=\"500\" xmlns=\"http://www.w3.org/2000/svg\">";
 
-//SimpleDisplay.display = [];
 
-SimpleDisplay.new = function(ele,nome){
-	id = "SimpleDisplay_" + nome;
+
+
+SimpleDisplay.new = function(base,nome){
+	nDisplay = {};
+	nDisplay.id = "SimpleDisplay_" + nome;
+	nDisplay.base = base;
 	parametros = {
-		"id":id,
-
+		"id":nDisplay.id,
 	};
-	SimpleDisplay.display = {};
-	SimpleDisplay.display.id = id;
-	ele.innerHTML = template.replace(SimpleDisplay.template.svg,parametros);
+	nDisplay.base.innerHTML = template.replace(SimpleDisplay.template.svg,parametros);
+	nDisplay.ele = document.getElementById(nDisplay.id);
+	SimpleDisplay.display[nome] = nDisplay;
 }
-SimpleDisplay.addRect = function (x=0,y=0,width=100,height=100,color="white",line="red"){
+SimpleDisplay.addEle = function(){
+	
+};
+SimpleDisplay.addRect = function (display,x=0,y=0,width=100,height=100,color="white",line="red"){
   //document.getElementById("display").innerHTML = "<rect id=\"redrect\" width=\"50\" height=\"50\" fill=\"red\" />";
   parametros = {
     "id":"X",
@@ -32,11 +36,10 @@ SimpleDisplay.addRect = function (x=0,y=0,width=100,height=100,color="white",lin
     "stroke":line
   };
   str = template.replace(SimpleDisplay.template.rect,parametros);
-  console.log(str);
-  document.getElementById("display").innerHTML = str;
+  SimpleDisplay.display[display].ele.innerHTML = str;
   //console.log(str);
 };
-SimpleDisplay.addCircle = function (){
+SimpleDisplay.addCircle = function (display){
   document.getElementById("display").innerHTML = "<circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />";
 };
 SimpleDisplay.display = function(){
