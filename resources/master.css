@@ -84,11 +84,18 @@ nav li:hover{
   background: black;
 }
 article{
-  border:1px solid red;
+  //border:1px solid red;
   margin: 10px;
   padding: 10px;
 }
 article header{
 	position:relative;
+}
+article li{
+	list-style: none;
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+	margin-bottom:10px;
+	padding:10px;
 }
 
