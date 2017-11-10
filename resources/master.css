@@ -3,9 +3,9 @@
   margin: 0;
 }
 body{
-	margin-top: 60px;
+	margin-top: 70px;
 }
-header {
+#page{
   position: fixed;
   background-color: white;
   z-index: 100;
@@ -14,7 +14,7 @@ header {
   height: 30px;
   width: 100%;
   padding: 10px;
-  border-bottom: 1px solid black;
+  box-shadow: 10px 10px 5px #888888;
 }
 header #nav_botao{
   top: 0;
@@ -34,6 +34,9 @@ h1{
   font-size:30px;
   display: inline;
 }
+h2{
+	
+}
 nav{
 	transition-duration: 0.1s;
   transition-timing-function: linear;
@@ -49,6 +52,7 @@ nav{
   border: 0;
   overflow: hidden;
 }
+
 nav:hover{
   transition-duration: 0.1s;
   transition-timing-function: linear;
@@ -56,6 +60,7 @@ nav:hover{
   width: 200px;
   height: 200px;
   overflow: auto;
+  box-shadow: 10px 10px 5px #888888;
 }
 nav ul{
   padding-top: 10px;
@@ -80,21 +85,17 @@ nav li:hover{
   display: none;
   color: blue;
 }
-
-#displayS{
-  margin-top: 30px;
-  /*position: absolute;
-  right: 0;
-  top: 0;
-  */
-  background: black;
+#display{
+	text-align:center;
 }
 svg{
-	border: 1px solid red;
+	border: 1px solid black;
 }
 article{
   margin: 10px;
   padding: 10px;
+  
+  box-shadow: 10px 10px 5px #888888;
 }
 article header{
 	position:relative;
