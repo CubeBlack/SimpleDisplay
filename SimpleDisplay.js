@@ -21,9 +21,12 @@ SimpleDisplay.new = function(base,nome){
 	nDisplay.ele = document.getElementById(nDisplay.id);
 	SimpleDisplay.display[nome] = nDisplay;
 }
-SimpleDisplay.addEle = function(){
-	
+SimpleDisplay.displayObj.addEle = function(){
+
 };
+SimpleDisplay.addRect = function(){
+
+}
 SimpleDisplay.addRect = function (display,x=0,y=0,width=100,height=100,color="white",line="red"){
   //document.getElementById("display").innerHTML = "<rect id=\"redrect\" width=\"50\" height=\"50\" fill=\"red\" />";
   parametros = {

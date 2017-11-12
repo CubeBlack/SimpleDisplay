@@ -35,12 +35,12 @@ h1{
   display: inline;
 }
 h2{
-	
+
 }
 nav{
 	transition-duration: 0.1s;
   transition-timing-function: linear;
-  
+
   position: fixed;
   top: 0;
   left: 0;
@@ -94,8 +94,11 @@ svg{
 article{
   margin: 10px;
   padding: 10px;
-  
+
   box-shadow: 10px 10px 5px #888888;
+}
+code{
+  white-space: pre;
 }
 article header{
 	position:relative;
@@ -107,4 +110,3 @@ article li{
 	margin-bottom:10px;
 	padding:10px;
 }
-
