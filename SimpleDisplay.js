@@ -7,29 +7,31 @@ SimpleDisplay.display = [];
 SimpleDisplay.template.rect = "<rect id=\"{id}\" x=\"{x}\" y=\"{y}\" width=\"{width}\" height=\"{height}\" style=\"fill:{fill};stroke:{stroke};\" />";
 SimpleDisplay.template.svg = "<svg id=\"{id}\" height=\"300\" width=\"500\" xmlns=\"http://www.w3.org/2000/svg\">";
 
-
-
-
 SimpleDisplay.new = function(base,nome){
-	nDisplay = {};
+	nDisplay = SimpleDisplay.displayObj;
 	nDisplay.id = "SimpleDisplay_" + nome;
 	nDisplay.base = base;
 	parametros = {
 		"id":nDisplay.id,
 	};
 	nDisplay.base.innerHTML = template.replace(SimpleDisplay.template.svg,parametros);
-	nDisplay.ele = document.getElementById(nDisplay.id);
+	nDisplay.svg = document.getElementById(nDisplay.id);
 	SimpleDisplay.display[nome] = nDisplay;
-}
-SimpleDisplay.displayObj.addEle = function(){
-
+	return SimpleDisplay.display[nome];
 };
-SimpleDisplay.addRect = function(){
-
+SimpleDisplay.displayObj.rewrite = function(){
+	console.log(this.str);
+	this.svg.innerHTML = this.str;
 }
-SimpleDisplay.addRect = function (display,x=0,y=0,width=100,height=100,color="white",line="red"){
+SimpleDisplay.displayObj.addEle = function(ele){
+	this.str = ele.str;
+	this.rewrite();
+};
+
+SimpleDisplay.displayObj.addRect = function(x=0,y=0,width=100,height=100,color="white",line="red"){
   //document.getElementById("display").innerHTML = "<rect id=\"redrect\" width=\"50\" height=\"50\" fill=\"red\" />";
-  parametros = {
+	nEle = {};
+  nEle.parametros = {
     "id":"X",
     "x":x,
     "y":x,
@@ -38,23 +40,19 @@ SimpleDisplay.addRect = function (display,x=0,y=0,width=100,height=100,color="wh
     "fill":color,
     "stroke":line
   };
-  str = template.replace(SimpleDisplay.template.rect,parametros);
-  SimpleDisplay.display[display].ele.innerHTML = str;
+  nEle.str = template.replace(SimpleDisplay.template.rect,nEle.parametros);
+	this.addEle(nEle);
+  //SimpleDisplay.display[display].ele.innerHTML = str;
   //console.log(str);
 };
-SimpleDisplay.addCircle = function (display){
+SimpleDisplay.displayObj.addCircle = function (display){
   document.getElementById("display").innerHTML = "<circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />";
 };
-SimpleDisplay.display = function(){
-  //document.write("display");
-}
-SimpleDisplay.refresh = function(){
+SimpleDisplay.displayObj.refresh = function(){
   document.getElementById("display").innerHTML = "<rect id=\"redrect\" width=\"50\" height=\"50\" fill=\"red\" />";
 };
 
-var template = {
-
-};
+var template = {};
 template.replace = function(base,dados){
   dadosK=Object.keys(dados);
   for (var i = 0; i < dadosK.length; i++) {

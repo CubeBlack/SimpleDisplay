@@ -1,31 +1,14 @@
-<Article>
-  <header>
-    <h2>Rect</h2>
-  </header>
-  <ul>
-    <li> <h3>Default</h3>
+<article >
+  <h1>Rect</h1>
+  [SimpleDisplay.DisplayObj.addRect(parametrs)]
+  <section>
+    <h2>Defalt</h2>
 <code>
-&lt;script&gt;
-function loaded(){
-  page.loadContent(page.nav,"nav");
-	page.openT("Display");
-
-	SimpleDisplay.new(page.display,"test");
-}
-&lt;/script&gt;
-&lt;body OnLoad="loaded()"&gt;
-  &lt;content id="me_display"&gt;
-  &lt;/content&gt;
-&ly;/body&gt;
-string ElementID<var> =  SimpleDisplay.addRect(x=0,y=0,width=100,height=100,color="white",line="red")
+myDisplay.addRect();
 </code>
-    <p>
-        <button type="button" onclick="SimpleDisplay.addRect('test')">Rect Defaut</button>
-      </p>
-      <li> <h3>Default</h3>
-        <p><code>SampleDisplay.addRect()</code></p>
-        <p>
-          <button type="button" onclick="SimpleDisplay.addRect('test',30,30,30,30)">Rect Especific</button>
-        </p>
-  </ul>
+    <button type="button" name="rect padrão" onclick="console.log(myDisplay);myDisplay.addRect();">Button Default</button>
+  </section>
+  <section>
+    <h2>Parametrs</h2>
+  </section>
 </article>

@@ -57,26 +57,33 @@ nav:hover{
   transition-duration: 0.1s;
   transition-timing-function: linear;
 
-  width: 200px;
-  height: 200px;
+  width: auto;
+  height: auto;
   overflow: auto;
   box-shadow: 10px 10px 5px #888888;
 }
 nav ul{
   padding-top: 10px;
   list-style: none;
+  border-left: 1px solid black;
 }
 nav li{
+  padding: 2px;
+  padding-left: 20px;
+}
+nav li:hover{
+
+}
+nav a{
   cursor: pointer;
   font-size: 12px;
   padding: 3px;
   margin: 3px;
   border: 1px solid black;
 }
-nav li:hover{
+nav a:hover{
   transition-duration: 0.1s;
   transition-timing-function: linear;
-
   color: red;
   font-size: 14px;
   border: 2px solid red;
@@ -94,7 +101,6 @@ svg{
 article{
   margin: 10px;
   padding: 10px;
-
   box-shadow: 10px 10px 5px #888888;
 }
 code{
