@@ -1,5 +1,0 @@
-resquest = {
-  httpRequest(){
-
-  }
-}
