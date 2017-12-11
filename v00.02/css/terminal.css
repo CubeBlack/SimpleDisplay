@@ -1,0 +1,29 @@
+#content,#query{
+	width: calc(100% - 12px);
+	
+}
+#query{
+  bottom: 0;
+  height: 50px;
+}
+#query img{
+	  height: 25px;
+}
+#content{
+  position: absolute;
+  height: calc(100% - 70px);
+  overflow: scroll;
+  white-space:pre;
+}
+#comandInp{
+	width: calc(100% - 3px);
+}
+#log{
+	color:red;
+}
+#sended{
+	color:purple;
+}
+#receved{
+	color:blue;
+}

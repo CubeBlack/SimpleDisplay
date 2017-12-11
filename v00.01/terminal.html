@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Terminal</title>
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/terminal.css">
+    <script src="js/terminal.class.js" charset="utf-8"></script>
+  </head>
+  <body onload="term.loaded();">
+    <section id="content" class="bloco">
+    </section>
+    <section id="query" class="bloco">
+      <p><input type="text" id="comandInp" onKeyPress = "inputEnter(event)" autofocus></p>
+      <p><button type="button" onclick="term.send();" name="button" >Enter</button>
+		<label id="statusLbl">Empty!<label>
+		<a href="ducumentation">
+			<img src="img/docbotton.svg">
+		</a>
+		<a href="ducumentation">
+			<img src="img/configbotton.svg">
+		</a>
+	   </p>
+		
+    </section>
+  </body>
+</html>
