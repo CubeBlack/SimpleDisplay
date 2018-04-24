@@ -4,8 +4,8 @@ class Terminal{
 	this.receved = "";
 	//---------- config
 	//servidor de testes, para offline
-	this.server = ""
-	this.workerUrl = "http://localhost/GitHub/Teminal/terminal_v1.worker.js";
+	this.server = "http://knightslayer/server/server-terminal.php";
+	this.workerUrl = "http://knightslayer/server/v001.1/terminal_v1.1worker.js";
 
 	this.send_pre = "";
 	this.send_pos = "";
@@ -32,6 +32,9 @@ class Terminal{
 			retorno(event.data);
 		}
 		//return this.receved;
+	}
+	setServer(){
+		
 	}
 }
 console.log("terminal_v1.1.class.js");
