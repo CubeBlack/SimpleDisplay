@@ -9,6 +9,8 @@ SimpleDisplay.template.svg = "<svg id=\"{id}\" height=\"{height}\" width=\"{widt
 
 SimpleDisplay.new = function(base,nome, height="100%", width="100%"){
 	nDisplay = SimpleDisplay.displayObj;
+	nDisplay.elementos = [];
+	nDisplay.elementosN = 0;
 	nDisplay.id = "SimpleDisplay_" + nome;
 	nDisplay.base = base;
 	parametros = {
@@ -26,26 +28,35 @@ SimpleDisplay.displayObj.rewrite = function(){
 	this.svg.innerHTML = this.str;
 }
 SimpleDisplay.displayObj.addEle = function(ele){
-	this.str = ele.str;
+	nId = "E" + this.elementosN;
+	ele.id = nId;
+	parametros = {};
+	parametros["id"] = nId;
+	ele.str = template.replace(ele.str,parametros);
+	this.elementos[nId] = ele;
+	this.elementos[nId + ele];
+	this.str = this.str + ele.str;
+	this.elementosN++;
 	this.rewrite();
+	return nId;
 };
 
 SimpleDisplay.displayObj.addRect = function(x=0,y=0,width=100,height=100,color="white",line="red"){
   //document.getElementById("display").innerHTML = "<rect id=\"redrect\" width=\"50\" height=\"50\" fill=\"red\" />";
 	nEle = {};
   nEle.parametros = {
-    "id":"X",
     "x":x,
-    "y":x,
+    "y":y,
     "width":width,
     "height":height,
     "fill":color,
     "stroke":line
   };
   nEle.str = template.replace(SimpleDisplay.template.rect,nEle.parametros);
-	this.addEle(nEle);
+	return this.addEle(nEle);
   //SimpleDisplay.display[display].ele.innerHTML = str;
   //console.log(str);
+  
 };
 SimpleDisplay.displayObj.addCircle = function (display){
   document.getElementById("display").innerHTML = "<circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />";
