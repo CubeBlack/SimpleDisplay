@@ -6,9 +6,9 @@ class Terminal{
 		
 		this.receved = "";
 		//---------- config
-		//servidor de testes, para offline
 		this.server = "";
 		this.workerUrl = "";
+		this.ultimoRequerimentoDoServidor = "";
 
 		this.send_pre = "";
 		this.send_pos = "";
@@ -25,7 +25,7 @@ class Terminal{
 			return;
 		}
 		//
-		comander = encodeURI(comander);
+		comander = encodeURI(this.send_pre + comander + this.send_pos);
 		this.send(comander,retorno);
 	}
 	iCom(comander, retorno = "Empty!"){
@@ -98,16 +98,17 @@ class Terminal{
 			retorno(this.id + ": Não foi posivel a comunicação com o servidor, Verifique se o terminal foi iniciado corretamente");
 			return;
 		}
-		if(term.server == ""){
+		if(this.server == ""){
 			retorno(this.id + ": Servidor não reconhecido");
 			return;
 		}
 		//mensage = "";
 		var mensage = this.server + "?comander=" + comander;
+		this.ultimoRequerimentoDoServidor =  mensage;
 		this.wRequest.postMessage(mensage);
 		
 		this.wRequest.onmessage = function(event) {
-			term.receved = event.data;
+			this.receved = event.data;
 			retorno(event.data);
 		}
 		//return this.receved;
@@ -132,6 +133,13 @@ class Terminal{
 		retorno += " - ---------- .Help - ---------- \n";
 		retorno += "aaaa \n";
 		return retorno;
+	}
+	setBase(pre,pos){
+		this.send_pre = pre;
+		this.send_pos = pos;
+	}
+	toStr(str){
+		return "strBegin\"" + str + "\"strEnd";
 	}
 }
 console.log("terminal_v2.0.class.js");

@@ -1,10 +1,11 @@
 *{
-  padding: 0;
-  margin: 0;
+
 }
 body{
+	padding: 0;
+	margin: 0;
 	background-color:blue;
-  background-image:url("background500.png");
+	background-image:url("background500.png");
 }
 .bloco{
   position: absolute;

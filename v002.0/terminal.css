@@ -8,18 +8,18 @@ header{
 }
 #content,#query{
 	width: calc(100% - 12px);
-	
 }
 #query{
   bottom: 0;
   height: auto;
+  padding: 0;
 }
 #query img{
 	height: 25px;
 }
 #content{
   position: absolute;
-  height: calc(100% - 40px);
+  height: calc(100% - 70px);
   overflow: scroll;
   white-space:pre;
 }

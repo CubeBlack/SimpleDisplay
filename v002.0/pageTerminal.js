@@ -7,7 +7,7 @@ page.loaded = function(){
 	//term.setServer("http://knightslayer/server/server-terminal.php");
 	//term.server = "http://knightslayer/server/server-terminal.php";
 	//------------------
-	term.setWorker("terminal_v1.1worker.js");
+	term.setWorker("https://localhost/Teminal/v002.0/terminal_v1.1worker.js");
 	
 	page.statusLbl = document.getElementById("statusLbl");
 	page.comandInp = document.getElementById("comandInp");
@@ -34,6 +34,7 @@ page.com = function(){
 	msg = page.comandInp.value;
 	this.setContent(msg,"sended");
 	term.com(msg,page.receved);
+	this.setContent(term.ultimoRequerimentoDoServidor);
 	page.comandInp.value = "";
 }
 //chamado no script "terminal"
@@ -49,6 +50,11 @@ page.openServer = function(url){
 	term.com(".setServer("+url+")",page.receved);
 	term.com(".on",page.receved);
 	term.com("",page.receved);
+	term.setBase("","");
+}
+page.openGrimorio = function(){
+	page.openServer('https://localhost/EddysWorld/server/eddysworld_server.term.php');
+	term.setBase("grimorio.dizer(strBegin\"",'\"strEnd)');
 }
 page.clear = function(){
 	this.content.innerHTML = "<h1>" + term.id + "</h1>";
