@@ -7,7 +7,7 @@ page.loaded = function(){
 	//term.setServer("http://knightslayer/server/server-terminal.php");
 	//term.server = "http://knightslayer/server/server-terminal.php";
 	//------------------
-	term.setWorker("https://localhost/Teminal/v002.0/terminal_v1.1worker.js");
+	term.setWorker("terminal_v1.1worker.js");
 	
 	page.statusLbl = document.getElementById("statusLbl");
 	page.comandInp = document.getElementById("comandInp");
