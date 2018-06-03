@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Terminal</title>
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="terminal.css">
+	<script src="terminal_v2.0.class.js" charset="utf-8"></script>
+	<script src="pageTerminal.js" charset="utf-8"></script>
+  </head>
+  <body onload="page.loaded();">
+    <section id="content" class="bloco">
+    </section>
+	<header>
+		<a><img src="cubeblackicon.svg"></a>
+		<a href="ducumentation">
+			<img src="docbotton.svg">
+		</a>
+		<label id="statusLbl">Empty!<label>	
+		<a href="#">
+			<img src="configbotton.svg">
+		</a>
+
+	</header>
+    <section id="query" class="bloco">
+      <p>
+		<input type="text" id="comandInp" onKeyPress = "page.inputEnter(event)" autofocus>
+
+		<a href="#">
+			<img src="anterior.svg">
+		</a>
+		<a href="#">
+			<img src="proximo.svg">
+		</a>
+	   </p>
+    </section>
+	<div id="menu" class="bloco">
+		<img href="configbotton.svg">
+	</div>
+  </body>
+</html>
