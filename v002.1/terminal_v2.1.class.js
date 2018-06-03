@@ -8,7 +8,6 @@ class Terminal{
 		this.receved = "";
 		//---------- config
 		this.server = "";
-		this.workerUrl = "";
 		this.ultimoRequerimentoDoServidor = "";
 
 		this.send_pre = "";
@@ -125,7 +124,8 @@ class Terminal{
 		if(this.workerUrl==""){
 			return this.id + ": TerminalUrl não definido";
 		}
-		this.wRequest = new Worker(this.workerUrl);
+		//this.wRequest = new Worker(this.workerUrl);
+		this.novoWorker();
 		return this.id + ": Aberta conecção com o servidor";
 	}
 	help(){
@@ -142,5 +142,33 @@ class Terminal{
 	toStr(str){
 		return "strBegin\"" + str + "\"strEnd";
 	}
+	novoWorker(){
+		function worker_function() {
+			function httpGet(theUrl)
+			{
+				var xmlHttp = new XMLHttpRequest();
+				xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+				xmlHttp.send( null );
+				return xmlHttp.responseText;
+			}
+			onmessage = function(e) {
+				resposta = httpGet(e.data);
+				postMessage(resposta);
+			  //postMessage("mensagem retornada, " + e.data);
+			}
+		}
+		// This is in case of normal worker start
+		// "window" is not defined in web worker
+		// so if you load this file directly using `new Worker`
+		// the worker code will still execute properly
+		if(window!=self)
+		  worker_function();
+
+		this.wRequest = new Worker(URL.createObjectURL(new Blob(["("+worker_function.toString()+")()"], {type: 'text/javascript'})));
+	}
 }
+
+
+
+
 console.log("terminal_v2.1.class.js");
