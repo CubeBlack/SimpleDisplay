@@ -1,3 +1,4 @@
+// n;ao roda de htps para http
 class Terminal{
 	constructor(){
 		this.id = "Term2.0";
