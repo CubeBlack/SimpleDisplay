@@ -59,4 +59,17 @@ page.openGrimorio = function(){
 page.clear = function(){
 	this.content.innerHTML = "<h1>" + term.id + "</h1>";
 }
+page.confCheck = false;
+page.config = function(){
+		//console.log("pop");
+	page.confCheck = !page.confCheck;
+	if(page.confCheck){
+		document.getElementById("menu-closed").style.display = "none"
+		document.getElementById("menu-content").style.display = "block";
+	}
+	else{
+		document.getElementById("menu-closed").style.display = "block";
+		document.getElementById("menu-content").style.display = "none";
+	}
+}
 console.log("pageTerminal.js");

@@ -6,7 +6,7 @@
     <title>Terminal</title>
     <link rel="stylesheet" href="master.css">
     <link rel="stylesheet" href="terminal.css">
-	<script src="terminal_v2.0.class.js" charset="utf-8"></script>
+	<script src="terminal_v2.1.class.js" charset="utf-8"></script>
 	<script src="pageTerminal.js" charset="utf-8"></script>
   </head>
   <body onload="page.loaded();">
@@ -18,9 +18,6 @@
 			<img src="docbotton.svg">
 		</a>
 		<label id="statusLbl">Empty!<label>	
-		<a href="#">
-			<img src="configbotton.svg">
-		</a>
 
 	</header>
     <section id="query" class="bloco">
@@ -35,8 +32,24 @@
 		</a>
 	   </p>
     </section>
-	<div id="menu" class="bloco">
-		<img href="configbotton.svg">
-	</div>
+	<menu-base>
+		<div id="menu-closed">
+			<a onclick="page.config()"><img src="btnConfig.svg"></a>
+		</div>
+		<div id="menu-content">
+			<h3>Config</h3>
+			<a href="#">Documentacao</a>
+			<ul>
+				<li>Cloto</li>
+				<li>KnightSlayer</li>
+				<li>EddysWord</li>
+			</ul>
+			<form>
+				<input placeholder="URL do servidor">
+				<button>SetServer</button>
+			</form>
+			<button onclick="page.config()" >Cancelar</button>
+		</div>
+	</menu-base>
   </body>
 </html>

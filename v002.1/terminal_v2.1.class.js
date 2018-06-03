@@ -142,4 +142,4 @@ class Terminal{
 		return "strBegin\"" + str + "\"strEnd";
 	}
 }
-console.log("terminal_v2.0.class.js");
+console.log("terminal_v2.1.class.js");

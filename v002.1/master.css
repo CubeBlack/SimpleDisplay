@@ -5,7 +5,7 @@ body{
 	padding: 0;
 	margin: 0;
 	background-color:blue;
-	background-image:url("background500.png");
+	background-image:url("background250.svg");
 }
 .bloco{
   position: absolute;
@@ -30,7 +30,26 @@ nav{
 	min-height:50px;
 	min-width:50px;
 }
-#menu{
-	right:0;
-	top:0;
+menu-base{
+	position:fixed;
+	right:20px;
+	top:3px;
+}
+#menu-closed{
+	cursor:pointer;
+	display:block;
+	padding:3px;
+	border: 1px solid black;
+}
+#menu-closed:hover{
+	background-color:green;
+}
+#menu-closed img{
+	height:50px;
+	
+}
+#menu-content{
+	display:none;
+	padding:3px;
+	border: 1px solid black;
 }
