@@ -52,10 +52,6 @@ page.openServer = function(url){
 	term.com("",page.receved);
 	term.setBase("","");
 }
-page.openGrimorio = function(){
-	page.openServer('https://localhost/EddysWorld/server/eddysworld_server.term.php');
-	term.setBase("grimorio.dizer(strBegin\"",'\"strEnd)');
-}
 page.clear = function(){
 	this.content.innerHTML = "<h1>" + term.id + "</h1>";
 }
